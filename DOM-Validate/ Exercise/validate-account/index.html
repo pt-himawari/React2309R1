@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function isValidAccount(account) {
+      // Quy tắc: Tên tài khoản phải có ít nhất 6 ký tự
+      if (account.length < 6) {
+        return false;
+      }
+      // Quy tắc: Tên tài khoản không được chứa ký tự đặc biệt
+      let specialCharacters = /[!@#$%^&*(),.?":{}|<>]/;
+      if (specialCharacters.test(account)) {
+        return false;
+      }
+      // Quy tắc: Tên tài khoản không được chứa khoảng trắng
+      if (account.indexOf(" ") !== -1) {
+        return false;
+      }
+      // Nếu tất cả các quy tắc trên được tuân thủ, tài khoản được coi là hợp lệ
+      return true;
+    }
+
+    // Sử dụng phương thức isValidAccount() để kiểm tra tính hợp lệ của tài khoản
+    let account1 = "myaccount123";
+    let account2 = "invalid_account!";
+    let account3 = "short";
+    console.log(isValidAccount(account1)); // true
+    console.log(isValidAccount(account2)); // false
+    console.log(isValidAccount(account3)); // false
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function isValidEmail(email) {
+      // Biểu thức chính quy để kiểm tra tính hợp lệ của email
+      let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      // Sử dụng hàm test() để kiểm tra email
+      return emailRegex.test(email);
+    }
+
+    // Sử dụng phương thức isValidEmail() để kiểm tra tính hợp lệ của email
+    let email1 = "example@email.com";
+    let email2 = "invalid-email";
+    console.log(isValidEmail(email1)); // true
+    console.log(isValidEmail(email2)); // false
+
+  </script>
+</body>
+
+</html>
