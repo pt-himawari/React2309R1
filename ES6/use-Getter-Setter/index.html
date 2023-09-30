@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      #name;
+      constructor(name) {
+        this.#name = name;
+      }
+      get name() {
+        return this.#name;
+      }
+      set name(newName) {
+        this.#name = newName;
+      }
+      walk() {
+        console.log(`${this.#name} is walking.`);
+      }
+    }
+    class Programmer extends Person {
+      constructor(name, language) {
+        super(name);
+        this._language = language;
+      }
+      get language() {
+        return this.language;
+      }
+      set language(newlanguage) {
+        this._language = newlanguage;
+      }
+      writeCode() {
+        console.log(`${this.name} -  programming language : ${this.language}.`);
+      }
+    }
+    const programmer = new Programmer("Nguyen van A", "ReactJS");
+    // sử dụng hàm get
+    console.log(programmer.name);
+    // sử dụng hàm set 
+    programmer.name = "Nguyen van B";
+    console.log(programmer.name);
+
+
+
+  </script>
+</body>
+
+</html>

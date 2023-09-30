@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let animals = new Set(["Eurasian Collared-Dove", "Bald Eagle", "Cooper's Hawk", "Mourning Dove"]);
+    // add một loại động vật
+    animals.add("Bò");
+    console.log(animals);
+    // kiểm tra xem có trong danh sách 
+    console.log(animals.has("Bò"));
+    // delete
+    animals.delete("Eurasian Collared-Dove");
+    console.log(animals);
+    // in danh sach cac loai hien co
+
+    animals.forEach((animal) => {
+      console.log(animal);
+
+    })
+
+  </script>
+</body>
+
+</html>

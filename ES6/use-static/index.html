@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Info {
+      constructor(name, description) {
+        this.name = name
+        this.description = description;
+      }
+      static computeValue(defaultValue = 1) {
+        return defaultValue * 3;
+      }
+    }
+    class Geometry extends Info {
+      constructor(name, description, length) {
+        super(name, description);
+        this.length = length;
+      }
+      static computeArea() {
+        return this.length * this.length;
+      }
+    }
+    // tạo các đối tượng hình học 
+    const square = new Geometry("Square", "A four-sided polygon with equal sides", 5);
+    // truy cập thuộc tính
+    console.log("Name:", square.name);
+    console.log("Description:", square.description);
+    console.log("Length:", square.length);
+    // Gọi hàm computeValue từ lớp Thông Tin và computeArea từ lớp Hình Học
+    console.log("Compute Value:", Geometry.computeValue(2)); // Kết quả: 6
+    console.log("Compute Area:", Geometry.computeArea());     // Kết quả: 25
+
+  </script>
+</body>
+
+</html>
