@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<title>Document</title>
+	<style>
+		img {
+			width: 300px;
+			height: 300px;
+		}
+
+		body {
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container text-center mt-5 bg-black ">
+		<div class="row mb-5">
+			<h1 class="text-uppercase text-light">Giphy party</h1>
+			<div class="input-group justify-content-center ">
+				<div class="form-outline">
+					<input id="search-input" type="search" id="form1" class="form-control" />
+				</div>
+				<button id="search-button" type="button" class="btn btn-primary me-2">
+					<i class="fas fa-search"></i>
+				</button>
+				<button id="remove-button" type="button" class=" btn btn-danger">
+					Remove Imagees
+				</button>
+			</div>
+		</div>
+		<div id="list" class="row text-start mt-2  ">
+		</div>
+
+	</div>
+
+	<script>
+		const searchBnt = document.getElementById('search-button');
+		const removeBtn = document.getElementById('remove-button');
+		const listElement = document.getElementById('list')
+		// nut go
+		removeBtn.addEventListener('click', function () {
+			listElement.innerHTML = "";
+
+		})
+		//  nut tim kiem
+		searchBnt.addEventListener('click', function () {
+			const inputElement = document.getElementById('search-input')
+
+			console.log(inputElement.value);
+			fetch(`https://api.giphy.com/v1/gifs/search?q=${inputElement.value}&api_key=e9Tj0kSGuGBrIgS5AEcyEkL8WNPjZQlc`, {
+				method: "GET"
+			}).then(function (response) {
+				return response.json();
+			}).then(function (resDatas) {
+
+				let htmls = resDatas.data.map(function (resData, index) {
+					if (index < 16) {
+						return `
+							<div class="text-center col-3 mb-2">
+								<img id="image"  src="${resData.images.downsized.url}" class="rounded " alt="...">
+							</div>`
+					}
+				})
+				console.log(htmls)
+				listElement.innerHTML = htmls.join("");
+			})
+
+		})
+
+	</script>
+</body>
+
+</html>
