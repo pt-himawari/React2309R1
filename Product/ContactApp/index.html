@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Contact App</title>
+
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="mt-3">Contacts</h1>
+		<div class="d-flex mt-3">
+			<!-- Button trigger modal add -->
+			<button id="btnAdd" onclick="showModalAdd()" type="button"
+				class="btn btn-outline-dark d-flex align-items-center me-2" data-bs-toggle="modal"
+				data-bs-target="#contactModal">
+				<i class="material-icons me-1">group_add</i>
+				<span class="fs-4">Add</span>
+			</button>
+
+			<!-- Modal add  -->
+			<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="contactModalLabelAdd">Add Contact</h1>
+							<h1 class="modal-title fs-5 d-none" id="contactModalLabelUpdate">Update Contact</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<form id="contactForm">
+							<div class="modal-body">
+								<div class="d-flex">
+									<div class="me-2">
+										<input name="id" hidden type="text" class="form-control" aria-label="Sizing example input"
+											aria-describedby="inputGroup-sizing-default">
+										<div class="input-group mb-3">
+											<span class="input-group-text col-5" id="inputGroup-sizing-default">Name</span>
+											<input name="name" type="text" required class="form-control" aria-label="Sizing example input"
+												aria-describedby="inputGroup-sizing-default">
+
+										</div>
+										<div class="input-group mb-3 imageInputGroup">
+											<span class="input-group-text col-5" id="inputGroup-sizing-default">Avatar</span>
+											<input type="file" id="imageInput" accept="image/*" name="avatar" class="form-control"
+												aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+										</div>
+										<div class="input-group mb-3">
+											<span class="input-group-text col-5" id="inputGroup-sizing-default">Phone number</span>
+											<input type="number" class="form-control" required name="mobile" aria-label="Sizing example input"
+												aria-describedby="inputGroup-sizing-default">
+										</div>
+										<div class="input-group mb-3">
+											<span class="input-group-text col-5" id="inputGroup-sizing-default">Email</span>
+											<input type="email" class="form-control" required name="email" aria-label="Sizing example input"
+												aria-describedby="inputGroup-sizing-default">
+										</div>
+									</div>
+									<div class="text-center mb-3 d-none avatar">
+										<img src="./assets/images/1.jpg" class="img-fluid " alt="Avatar">
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button id="btnAddNewContact" type="submit" class="btn btn-dark">Add</button>
+								<button id="btnUpdateContact" type="submit" data-bs-dismiss="modal"
+									class="btn btn-dark d-none">Update</button>
+								<button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" class="btn btn-outline-dark d-flex align-items-center me-2">
+				<i class="material-icons">filter_list</i>
+				<span class="fs-4">Filter</span>
+			</button>
+
+			<div class="input-group">
+				<div class="form-outline">
+					<input type="search" id="searchInput" id="form1" class="form-control h-100" />
+				</div>
+				<button type="button" id="searchButton" class="btn btn-dark">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+
+			<!-- <button type="button" class="btn btn-primary">Add</button> -->
+
+
+		</div>
+		<div class="mt-3">
+			<table class="table table-hover align-middle">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+							</div>
+						</th>
+						<th scope="col">Name</th>
+						<th scope="col">Avatar</th>
+						<th scope="col">Phone</th>
+						<th scope="col">Email</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+	</div>
+
+
+	<script src="assets/javascript/contact.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
