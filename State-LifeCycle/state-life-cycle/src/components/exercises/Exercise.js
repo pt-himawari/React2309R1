@@ -2,8 +2,9 @@ import React from "react";
 import ExpandCollapse from "../exercises/ComponentExpandCollapse";
 import Calculator from "../exercises/Calculator";
 import LoginLogoutForm from "../exercises/LoginLogoutForm";
-import TodoApp from "../exercises/TodoApp";
-import StudentApp from "../exercises/StudentApp";
+import TodoApp from "./TodoAppcopy";
+import StudentApp from "./StudentApp";
+import PlayListApp from "./PlayListApp";
 function ShowExercise() {
   return (
     <div className="container-fluid mt-5 border border-primar">
@@ -11,7 +12,9 @@ function ShowExercise() {
       <ExpandCollapse />
       <Calculator />
       <LoginLogoutForm />
+      <PlayListApp />
       <TodoApp />
+
       <StudentApp />
     </div>
   );
