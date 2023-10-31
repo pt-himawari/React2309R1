@@ -3,8 +3,9 @@ function PostListAPIPage() {
   const [postList, setPostList] = useState([]);
   const [page, setPage] = useState(1);
   // Tạo một mảng chứa các số trang từ 1 đến totalPages
-  let totalPages = 6; // Tổng số trang
-  const pagesPerPage = 3; // Số trang hiển thị mỗi lần
+  let totalPages = 20; // Tổng số trang
+  const pagesPerPage = 10; // Số trang hiển thị mỗi lần
+  const totalPageGroups = Math.ceil(totalPages / pagesPerPage);
 
   useEffect(() => {
     fetch(`https://js-post-api.herokuapp.com/api/posts?_page=${page}`)
@@ -15,7 +16,7 @@ function PostListAPIPage() {
       });
   }, [page]);
   // Tính toán số lượng nhóm trang dựa trên tổng số trang và số trang trên mỗi lần
-  const totalPageGroups = Math.ceil(totalPages / pagesPerPage);
+
   // console.log("totalPageGroups : " + totalPageGroups);
 
   // const totalPageGroups = useMemo(() => {
@@ -62,7 +63,7 @@ function PostListAPIPage() {
     <div className="card my-3">
       <nav aria-label="Page navigation example">
         <ul className="pagination justify-content-center">
-          <li className={`page-item ${page < 2 ? "disabled" : ""} `}>
+          <li className={`page-item ${page <= 1 ? "disabled" : ""} `}>
             <a
               className="page-link"
               href="#"

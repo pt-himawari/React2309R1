@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="container border p-5 ">
       <h1 className="text-center mt-4 text-primary">Hooks Exercises</h1>
-      {/* <SelectYourCar></SelectYourCar> */}
-      {/* <Timer></Timer> */}
+      <SelectYourCar></SelectYourCar>
+      <Timer></Timer>
       <PostListAPIPage />
     </div>
   );
