@@ -90,7 +90,7 @@ function BookManagementApp() {
   render1++;
   return (
     <div className="border p-5">
-      <h2 className="text-info mb-3">2.Book Management App : {render1} </h2>
+      <h2 className="text-info mb-3">2. Book Management App : {render1} </h2>
       <div className="ms-5 fs-3 ">
         {/* form */}
         <form className="w-50" noValidate onSubmit={handleSubmit(onSubmit)}>
