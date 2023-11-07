@@ -20,10 +20,6 @@ function App() {
         <Route path="/formMail" element={<MailForm />} />
         <Route path="/formMedical" element={<MedicalDeclarationForm />} />
       </Routes>
-      {/* <ContactForm /> */}
-      {/* <BookManagementApp /> */}
-      {/* <MailForm /> */}
-      {/* <MedicalDeclarationForm /> */}
     </div>
   );
 }
