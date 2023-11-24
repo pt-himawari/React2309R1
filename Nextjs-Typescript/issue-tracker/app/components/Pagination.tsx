@@ -1,13 +1,12 @@
 "use client";
-import { Flex, Text, Button } from "@radix-ui/themes";
+import { Button, Flex, Text } from "@radix-ui/themes";
 import {
-  MdOutlineKeyboardDoubleArrowRight,
+  MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
   MdOutlineKeyboardDoubleArrowLeft,
-  MdKeyboardArrowLeft,
+  MdOutlineKeyboardDoubleArrowRight,
 } from "react-icons/md";
 
-import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 interface Props {
   itemCount: number;

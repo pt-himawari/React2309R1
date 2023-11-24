@@ -1,10 +1,8 @@
 import authOptions from "@/app/auth/authOptions";
 import { patchIssueSchema } from "@/app/validationIssueSchema";
 import prisma from "@/prisma/client";
-import delay from "delay";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import React from "react";
 // interface Props {
 //   params: { params: { id: string } };
 // }

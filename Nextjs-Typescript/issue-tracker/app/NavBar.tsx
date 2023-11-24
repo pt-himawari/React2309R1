@@ -1,11 +1,4 @@
 "use client";
-import React from "react";
-import classnames from "classnames";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { AiFillBug } from "react-icons/ai";
-import { PiBugDroidFill } from "react-icons/pi";
-import { useSession } from "next-auth/react";
 import {
   Avatar,
   Box,
@@ -14,7 +7,11 @@ import {
   Flex,
   Text,
 } from "@radix-ui/themes";
-import { Skeleton } from "@/app/components";
+import classnames from "classnames";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { PiBugDroidFill } from "react-icons/pi";
 
 const NavBar = () => {
   return (

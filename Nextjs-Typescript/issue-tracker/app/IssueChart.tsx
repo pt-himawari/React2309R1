@@ -2,14 +2,13 @@
 
 import { Card } from "@radix-ui/themes";
 import {
-  ResponsiveContainer,
+  Bar,
   BarChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  Bar,
-  Tooltip,
 } from "recharts";
-import React from "react";
 
 // import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
