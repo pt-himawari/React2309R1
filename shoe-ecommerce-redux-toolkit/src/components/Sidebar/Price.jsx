@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchPrice } from "../../reducer/actions";
+// import { setSearchPrice } from "../../reducer/actions";
 
 const prices = [
   {
@@ -26,7 +26,7 @@ const prices = [
 ];
 function Price() {
   const dispatch = useDispatch();
-  const { price } = useSelector((state) => state.filters);
+  // const { price } = useSelector((state) => state.filters);
 
   return (
     <div className="py-2 d-flex flex-column justify-content-center">
@@ -41,14 +41,14 @@ function Price() {
               name="price"
               value={p.value}
               defaultChecked={p.name === "All"}
-              onInput={(e) => {
-                dispatch(setSearchPrice(e.target.value));
-              }}
+              // onInput={(e) => {
+              //   dispatch(setSearchPrice(e.target.value));
+              // }}
             />
             <label
               htmlFor={`price-${p.value}`}
               className={`form-check-label ${
-                p.value === price ? "text-decoration-underline fw-bolder" : ""
+                p.value === "price" ? "text-decoration-underline fw-bolder" : ""
               }`}
             >
               {p.name}

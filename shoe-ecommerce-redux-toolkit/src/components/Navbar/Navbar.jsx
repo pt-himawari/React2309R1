@@ -2,10 +2,10 @@ import React from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
-import { setSearchText } from "../../reducer/actions";
+import { setSearchText } from "../../reducers/actions";
 
 function Navbar() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <div className="d-flex justify-content-between align-items-center border-bottom py-2">
@@ -15,7 +15,7 @@ function Navbar() {
           placeholder="Enter your search shoes"
           className="form-control form-control-sm"
           style={{ paddingRight: "25px" }}
-          onInput={(e) => dispatch(setSearchText(e.target.value))}
+          // onInput={(e) => dispatch(setSearchText(e.target.value))}
           //   onInput={(e) => dispatch(setSearchText(e.target.value))}
         />
         <FaSearch

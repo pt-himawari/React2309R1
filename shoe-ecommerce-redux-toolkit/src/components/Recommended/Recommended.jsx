@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setSearchRecommended } from "../../reducer/actions";
+// import { setSearchRecommended } from "../../reducer/actions";
 
 const recommended = [
   {
@@ -38,10 +38,10 @@ function Recommended() {
               recmd.value === active ? " active" : ""
             }`}
             type="button"
-            onClick={(e) => {
-              dispatch(setSearchRecommended(recmd.value));
-              setActive(recmd.value);
-            }}
+            // onClick={(e) => {
+            //   dispatch(setSearchRecommended(recmd.value));
+            //   setActive(recmd.value);
+            // }}
           >
             {recmd.name}
           </button>

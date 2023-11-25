@@ -32,7 +32,7 @@ function Price() {
       <h5>Price</h5>
       <div className="form-group">
         {prices.map((price) => (
-          <div key={price} className="form-check py-1">
+          <div key={price.value} className="form-check py-1">
             <input
               className="form-check-input"
               type="radio"

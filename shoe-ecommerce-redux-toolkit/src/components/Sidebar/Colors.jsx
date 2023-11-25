@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { setSearchColor } from "../../reducer/actions";
+// import { setSearchColor } from "../../reducer/actions";
 
 const colors = ["All", "Black", "Blue", "Red", "Green", "White"];
 function Colors() {
   const dispatch = useDispatch();
-  const { color } = useSelector((state) => state.filters);
-  console.log(color);
+  // const { color } = useSelector((state) => state.filters);
+  // console.log(color);
   return (
     <div className="py-2 d-flex flex-column justify-content-center">
       <h5>Colors</h5>
@@ -28,14 +28,14 @@ function Colors() {
                   ? { backgroundColor: colr }
                   : {}
               }
-              onInput={(e) => {
-                dispatch(setSearchColor(e.target.value));
-              }}
+              // onInput={(e) => {
+              //   dispatch(setSearchColor(e.target.value));
+              // }}
             />
             <label
               htmlFor={`color-${i}`}
               className={`form-check-label ${
-                colr === color ? "text-decoration-underline fw-bolder" : ""
+                colr === "color" ? "text-decoration-underline fw-bolder" : ""
               }`}
             >
               {colr}
